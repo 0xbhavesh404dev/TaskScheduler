@@ -1,6 +1,5 @@
 public class Trial {
 
-    // Simple Linked List Node for testing
     static class TaskNode {
         Task task;
         TaskNode next;
