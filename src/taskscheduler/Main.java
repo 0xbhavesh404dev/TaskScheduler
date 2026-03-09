@@ -24,6 +24,10 @@ public class Main {
             sc.nextLine();
             String taskName;
             String deadline;
+
+
+
+
             int priority;
             switch (ch){
                 case 1:
