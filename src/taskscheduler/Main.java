@@ -7,6 +7,7 @@ public class Main {
         Scanner sc = new Scanner(System.in);
         TaskManager tm = new TaskManager();
         int ch = 0;
+        tm.initalize();
         do{
             System.out.println("=================================");
             System.out.println("         TASK SCHEDULER          ");
@@ -18,7 +19,8 @@ public class Main {
             System.out.println("5. update task details ");
             System.out.println("6. sort tasks by deadline");
             System.out.println("7. sort tasks by priority");
-            System.out.println("8. exit: ");
+            System.out.println("8. save tasks to file: ");
+            System.out.println("9. exit");
             System.out.print("Enter your choice: ");
             ch = sc.nextInt();
             sc.nextLine();
@@ -41,7 +43,6 @@ public class Main {
                         tm.createTask(taskName, deadline, priority);
                     }
                     break;
-                    
                 case 2:
                     System.out.print("enter taskName to be deleted: ");
                     taskName = sc.nextLine();
@@ -87,7 +88,11 @@ public class Main {
                     System.out.println("Tasks sorted by priority");
                     tm.sortByPriority();
                     break;
+                case 8:
+                    tm.save();
+                    break;
             }
-        }while(ch!=8);
+        }while(ch!=9);
+        tm.save();
     }
 }
